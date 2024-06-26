@@ -11,7 +11,7 @@ const LocalStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcrypt');
 const nodemailer = require('nodemailer');
 const Product = require('./models/produto')
-// const User = require('./models/user')
+// const User = require('./models/user' teste)
 const UserAdm = require('./models/userAdm')
 
 const app = express();
@@ -66,6 +66,7 @@ passport.use(new LocalStrategy((username, password, done) => {
             return done(err);
         });
 }));
+
 
 passport.serializeUser((user, done) => {
     done(null, user.id);
